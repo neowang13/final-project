@@ -1,0 +1,16 @@
+
+.navbar-default{
+background-color:#007799;	
+}
+
+a{
+	padding right: 20px;
+	padding-left: 20px;
+}
+
+.picture:{
+width: 400px; 
+}
+.inline:{
+	width: 400px;
+}

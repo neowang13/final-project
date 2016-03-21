@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://assets.adobedtm.com/4dcc0c45c6fdeefa68321c7c62f31677c4941108/scripts/satellite-5593f0cf35343800140004e2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+    <script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "<!-- DoubleClick DART Natural Search Standard Tracking Tag for DS3\nDFA Network - Canadian Tire Corporation - DFA (35509) : DS Agency - Canadian Tire Corporation (20700000001000406) : DS Advertiser - Sport Chek SEM (21700000001012075)\nPlease do not remove\nTag should be placed at the top of the page, after opening body tag and before DoubleClick Spotlight or Floodlight tag(s)\nCreation Date: 10-24-2014 -->\n<script type='text/javascript'>\n// DoubleClick DART Natural Search Tracking Code\nif (document.referrer){\nvar ord = Math.random()*1000000000000;\ndocument.write('<SCRIPT language=\"JavaScript1.1\" SRC=\"https://ad.doubleclick.net/adj/N35509.197812NSO.CODESRV/B8493218.114934051;dcadv=4667319;sz=1x2;ord=' + ord + '?\"><\\/SCRIPT>');\n}\n</scr"+"ipt>";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script><!-- DoubleClick DART Natural Search Standard Tracking Tag for DS3
+DFA Network - Canadian Tire Corporation - DFA (35509) : DS Agency - Canadian Tire Corporation (20700000001000406) : DS Advertiser - Sport Chek SEM (21700000001012075)
+Please do not remove
+Tag should be placed at the top of the page, after opening body tag and before DoubleClick Spotlight or Floodlight tag(s)
+Creation Date: 10-24-2014 -->
+<script type="text/javascript">
+// DoubleClick DART Natural Search Tracking Code
+if (document.referrer){
+var ord = Math.random()*1000000000000;
+document.write('<SCRIPT language="JavaScript1.1" SRC="https://ad.doubleclick.net/adj/N35509.197812NSO.CODESRV/B8493218.114934051;dcadv=4667319;sz=1x2;ord=' + ord + '?"><\/SCRIPT>');
+}
+</script><script language="JavaScript1.1" src="B8493218.114934051"></script>
+
+  
+
+</body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://assets.adobedtm.com/4dcc0c45c6fdeefa68321c7c62f31677c4941108/scripts/satellite-556dfc553261390014600300.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+    <script async="" src="fbds.js"></script><script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "<script>(function() {\n  var _fbq = window._fbq || (window._fbq = []);\n  if (!_fbq.loaded) {\n    var fbds = document.createElement('script');\n    fbds.async = true;\n    fbds.src = '//connect.facebook.net/en_US/fbds.js';\n    var s = document.getElementsByTagName('script')[0];\n    s.parentNode.insertBefore(fbds, s);\n    _fbq.loaded = true;\n  }\n  _fbq.push(['addPixelId', '1572570712973439']);\n})();\nwindow._fbq = window._fbq || [];\nwindow._fbq.push(['track', 'PixelInitialized', {}]);\n</scr"+"ipt>\n<noscript><img height=\"1\" width=\"1\" alt=\"\" style=\"display:none\" src=\"https://www.facebook.com/tr?id=1572570712973439&amp;ev=PixelInitialized\" /></noscript>\n\n";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script><script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '1572570712973439']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1572570712973439&amp;amp;ev=PixelInitialized" /&gt;</noscript>
+
+
+  
+
+</body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://assets.adobedtm.com/4dcc0c45c6fdeefa68321c7c62f31677c4941108/scripts/satellite-55aea1d96666390017000279.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+    <script type="text/javascript" async="" src="attribution.js"></script><script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "<script type=\"text/javascript\">\nwindow.___wishabi_attribution = {\nmerchant_id: '413',\ngoal_id: '2',\ngoal_value: '1'\n};\n(function() {\nvar ns = document.createElement('script');\nns.type = 'text/javascript';\nns.async = true;\nns.src = '//f.wishabi.net/attribution.js';\nvar s = document.getElementsByTagName('script')[0];\ns.parentNode.insertBefore(ns, s);\n})();\n</scr"+"ipt>";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script><script type="text/javascript">
+window.___wishabi_attribution = {
+merchant_id: '413',
+goal_id: '2',
+goal_value: '1'
+};
+(function() {
+var ns = document.createElement('script');
+ns.type = 'text/javascript';
+ns.async = true;
+ns.src = '//f.wishabi.net/attribution.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ns, s);
+})();
+</script>
+  
+
+</body></html>
